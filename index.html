@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <div id="app">
-    book -{{ book }}
-    author - {{ author }}
-    age - {{ age }}
-  </div>
-  <script src="./app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app">
+      <div v-if="true">
+        <h1>book -{{ book }}</h1>
+        <h4>author - {{ author }}</h4>
+        <h4>age - {{ age }}</h4>
+        <button v-on:click="age++">increace age</button>
+        <button v-on:click="author='mgmg'">change author name</button>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
 </html>
