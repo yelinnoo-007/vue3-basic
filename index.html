@@ -4,17 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .box {
+        background-color: green;
+        display: inline;
+        margin-left: 3px;
+        padding: 15px;
+      }
+    </style>
   </head>
   <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <div id="app">
-      <div v-if="true">
-        <h1>book -{{ book }}</h1>
-        <h4>author - {{ author }}</h4>
-        <h4>age - {{ age }}</h4>
-        <button v-on:click="age++">increace age</button>
-        <button v-on:click="author='mgmg'">change author name</button>
+      <div v-if="bookStatus">
+        <div v-for="book in books">
+          <h1>book -{{ book.title }}</h1>
+          <h4>author - {{ book.author }}</h4>
+          <h4>age - {{ book.age }}</h4><hr>
+        </div>
       </div>
+
+      <div>
+        <button @click="bookStatus=!bookStatus">
+          <span v-if="bookStatus">hide</span>
+          <span v-if="!bookStatus">show</span>
+        </button>
+      </div>
+      <a v-bind:href="link">google</a>
     </div>
     <script src="./app.js"></script>
   </body>
