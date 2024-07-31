@@ -7,19 +7,25 @@ const app = Vue.createApp({
           title: "Think like zuk",
           author: "zucarburg",
           age: 25,
+          img: "images/sport1.jpg",
+          isFav: true,
         },
         {
           title: "Think like zuk",
           author: "zucarburg",
           age: 25,
+          img: "images/sport2.jpg",
+          isFav: false,
         },
         {
           title: "Think like zuk",
           author: "zucarburg",
           age: 25,
+          img: "images/sport3.jpg",
+          isFav: true,
         },
       ],
-      link:"http://www.google.com",
+      link: "http://www.google.com",
       bookStatus: true,
     };
   },
@@ -27,17 +33,15 @@ const app = Vue.createApp({
     increaseAge() {
       this.age++;
     },
-    toogle() {
-      this.bookStatus = false;
+    addFavorite(book) {
+      book.isFav = !book.isFav;
     },
-    mouseoverHandler(event, message) {
-      alert(event.type + message);
-    },
-    mouseleaveHandler(event) {
-      alert("mouse leave" + event.type);
-    },
-    doubleclickHandler(event) {
-      alert("double click" + event.type);
+  },
+  computed: {
+    filterBooks() {
+      return this.books.filter((book) => {
+        return book.isFav;
+      });
     },
   },
 });

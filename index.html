@@ -11,16 +11,23 @@
         margin-left: 3px;
         padding: 15px;
       }
+      .favorite {
+        background-color: aqua;
+      }
     </style>
   </head>
   <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <div id="app">
       <div v-if="bookStatus">
-        <div v-for="book in books">
-          <h1>book -{{ book.title }}</h1>
-          <h4>author - {{ book.author }}</h4>
-          <h4>age - {{ book.age }}</h4><hr>
+        <div v-for="book in filterBooks">
+          <div :class="{favorite:book.isFav}" @click="addFavorite(book)">
+            <img :src="book.img" width="300" height="200" />
+            <h1>book -{{ book.title }}</h1>
+            <h4>author - {{ book.author }}</h4>
+            <h4>age - {{ book.age }}</h4>
+            <hr />
+          </div>
         </div>
       </div>
 
