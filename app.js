@@ -1,5 +1,4 @@
 const app = Vue.createApp({
-  // template: '<h2>Hello vue3</h2>',
   data() {
     return {
       books: [
