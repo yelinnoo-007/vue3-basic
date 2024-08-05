@@ -23,6 +23,13 @@ const app = Vue.createApp({
           img: "images/sport3.jpg",
           isFav: true,
         },
+        {
+          title: "Think like zuk",
+          author: "zucarburg",
+          age: 25,
+          img: "images/sport3.jpg",
+          isFav: true,
+        },
       ],
       link: "http://www.google.com",
       bookStatus: true,
